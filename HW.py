@@ -4,7 +4,7 @@ import mediapipe as mp
 
 
 cap = cv2.VideoCapture(0)
-finger= ["","","","",""]
+finger= ["","","","",""] #show the raised finger
 #Call hand pipe line module
 mpHands = mp.solutions.hands
 hands = mpHands.Hands()
@@ -22,7 +22,7 @@ while True:
                 h, w, c = img.shape
                 cx, cy = int(lm.x * w), int(lm.y * h)
                 
-
+                #identify the handlandmark's location in x and y-axis
                 if id == 4:
                     id4 = int(id)
                     cx4 = cx
@@ -54,8 +54,9 @@ while True:
                     id19 = int(id)
                     cy19 = cy
             
-
+            #create the condition to compare with tip and dip
             if finger:
+                #the greater cx stands for tip, lower one stands for dip
                 if cx4 < cx3:
                     finger[0]="th"
                 else:
