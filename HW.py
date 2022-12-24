@@ -22,7 +22,7 @@ while True:
                 h, w, c = img.shape
                 cx, cy = int(lm.x * w), int(lm.y * h)
                 
-                #identify the handlandmark's location in x and y-axis
+                #identify each handlandmark location in x-axis and y-axis
                 if id == 4:
                     id4 = int(id)
                     cx4 = cx
